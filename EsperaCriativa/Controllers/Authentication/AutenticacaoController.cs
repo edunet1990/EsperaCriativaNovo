@@ -14,9 +14,8 @@ namespace EsperaCriativa.Controllers
     public class AutenticacaoController : Controller
     {
         EsperaCriativaContext db = new EsperaCriativaContext();
-
-        // GET: Autenticacao
-
+        
+        [Authorize]
         public ActionResult Cadastrar()
         {
 
@@ -107,27 +106,27 @@ namespace EsperaCriativa.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-            // if (User.IsInRole("Faixa0A1"))
+            //if (User.IsInRole("Faixa0A1"))
             //{
-            //    return RedirectToAction("Index", "Formularios");
+            //    return RedirectToAction("Index", "Home");
             //}
 
-            // if (User.IsInRole("Faixa1A3"))
+            //if (User.IsInRole("Faixa1A3"))
             //{
             //    return RedirectToAction("Index", "Formularios2");
             //}
 
-            // if (User.IsInRole("Faixa4A5"))
+            //if (User.IsInRole("Faixa4A5"))
             //{
             //    return RedirectToAction("Index", "Formularios3");
             //}
 
-            // if (User.IsInRole("admin"))
+            //if (User.IsInRole("admin"))
             //{
             //    return RedirectToAction("Index", "Formularios");
             //}
 
-            // if (User.IsInRole("Administrador"))
+            //if (User.IsInRole("Administrador"))
             //{
             //    return RedirectToAction("Index", "Administrador");
             //}
@@ -137,12 +136,6 @@ namespace EsperaCriativa.Controllers
             ViewData["UsuarioId"] = IdUsuario;
             return RedirectToAction("Index", "Home", new { IdUsuario });
 
-        }
-
-        [Authorize]
-        public ActionResult AlterarSenha()
-        {
-            return View();
         }
 
         [Authorize]

@@ -4111,6 +4111,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Contexto\EsperaCriativaContext.cs" />
     <Compile Include="Controllers\Authentication\AutenticacaoController.cs" />
+    <Compile Include="Controllers\Authentication\UsuariosController.cs" />
     <Compile Include="Controllers\Gráficos\GraficosController.cs" />
     <Compile Include="Controllers\Gráficos\HabilidadesCriativasController.cs" />
     <Compile Include="Controllers\Gráficos\InsightsController.cs" />
@@ -4221,6 +4222,11 @@
     <Content Include="Views\Autenticacao\AlterarSenha.cshtml" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Views\Usuarios\Create.cshtml" />
+    <Content Include="Views\Usuarios\Delete.cshtml" />
+    <Content Include="Views\Usuarios\Details.cshtml" />
+    <Content Include="Views\Usuarios\Edit.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
