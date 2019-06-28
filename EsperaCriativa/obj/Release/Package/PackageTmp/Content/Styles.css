@@ -1,0 +1,53 @@
+﻿.menu-top, .menu-logo {
+    background-color: #FFE683 !important;
+    color:black !important
+}
+
+.skin-blue .main-header .logo {
+    background: #E4CF76 !important;
+    text-shadow:white 1px -1px, white -1px 1px, white 1px 1px, white 1px -1px;
+}
+
+
+
+/*Logo menu hover*/
+.skin-blue .main-header .navbar .sidebar-toggle:hover {
+    background: rgba(0,0,0,0.1)!important;
+}
+
+.skin-blue .main-header .navbar .sidebar-toggle {
+    color: black !important;
+}
+
+/*user menu*/
+.user-menu a span{
+    color:black 
+}
+
+/*Caixa menu-user*/
+.skin-blue .main-header li.user-header {
+    background-color: #E4CF76 !important;
+}
+
+.skin-blue .main-header li.user-header p{
+    color: black !important;
+}
+
+
+
+/*Cadastro de usuario*/
+.button-create-user{
+
+    padding-bottom:1px !important
+}
+.register-page, body {
+    background-color: #ecf0f5 !important
+}
+/*--Cadastro cadastro usuario*/
+
+/*Graficos*/
+element {
+    height: 0px;
+    min-height: 0px;
+}
+/*Graficos*/
