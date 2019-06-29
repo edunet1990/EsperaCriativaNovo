@@ -4227,6 +4227,8 @@
     <Content Include="Views\Usuarios\Details.cshtml" />
     <Content Include="Views\Usuarios\Edit.cshtml" />
     <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Formularios\Index.cshtml" />
+    <Content Include="Views\Formularios\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -4241,7 +4243,6 @@
     <Folder Include="Views\Experiencias\" />
     <Folder Include="Views\Formularios2\" />
     <Folder Include="Views\Formularios3\" />
-    <Folder Include="Views\Formularios\" />
     <Folder Include="Views\HabilidadesCriativas\" />
     <Folder Include="Views\Insights\" />
     <Folder Include="Views\PlanejamentosFixo\" />

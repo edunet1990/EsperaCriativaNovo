@@ -200,7 +200,7 @@ namespace EsperaCriativa.Planejamentos
             return View(MinhaViewModelFormulario);
         }
 
-        // GET: Formularios/Create
+        [Authorize]
         public ActionResult Create()
         {
             var Resultados = from b in db.Experiencias

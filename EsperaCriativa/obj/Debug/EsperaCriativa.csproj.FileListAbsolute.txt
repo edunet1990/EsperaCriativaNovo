@@ -70,7 +70,6 @@ C:\Users\Eduardo\source\repos\EsperaCriativa\EsperaCriativa\bin\pt-br\System.Web
 C:\Users\Eduardo\source\repos\EsperaCriativa\EsperaCriativa\bin\pt-br\System.Web.Webpages.Razor.resources.dll
 C:\Users\Eduardo\source\repos\EsperaCriativa\EsperaCriativa\bin\pt-br\System.Web.Helpers.resources.dll
 C:\Users\Eduardo\source\repos\EsperaCriativa\EsperaCriativa\bin\pt-br\System.Web.Mvc.resources.dll
-C:\Users\Eduardo\source\repos\EsperaCriativa\EsperaCriativa\obj\Debug\EsperaCriativa.csprojAssemblyReference.cache
 C:\Users\Eduardo\source\repos\EsperaCriativa\EsperaCriativa\obj\Debug\EsperaCriativa.csproj.CoreCompileInputs.cache
 C:\Users\Eduardo\source\repos\EsperaCriativa\EsperaCriativa\obj\Debug\EsperaCriativa.csproj.CopyComplete
 C:\Users\Eduardo\source\repos\EsperaCriativa\EsperaCriativa\obj\Debug\EsperaCriativa.dll
@@ -113,3 +112,4 @@ C:\Users\Eduardo\source\repos\EsperaCriativa\EsperaCriativa\bin\Microsoft.Owin.x
 C:\Users\Eduardo\source\repos\EsperaCriativa\EsperaCriativa\bin\Microsoft.Owin.Host.SystemWeb.xml
 C:\Users\Eduardo\source\repos\EsperaCriativa\EsperaCriativa\bin\Microsoft.Owin.Security.xml
 C:\Users\Eduardo\source\repos\EsperaCriativa\EsperaCriativa\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Eduardo\source\repos\EsperaCriativa\EsperaCriativa\obj\Debug\EsperaCriativa.csprojAssemblyReference.cache

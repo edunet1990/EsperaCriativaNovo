@@ -1,0 +1,370 @@
+﻿@model EsperaCriativa.ViewModels.Planejamentos.FormulariosViewModel
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+
+
+<div class="content-wrapper forum">
+    <!-- Content Wrapper. Contains page content -->
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Planejamento
+            <small> Crie um novo planejamento</small>
+        </h1>
+
+    </section>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <!-- Main content -->
+        <section class="content">
+
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Box Comment -->
+                    <div class="box box-widget ">
+                        <div class="box-body ">
+
+                            <h2>INTENÇÃO</h2>
+                            <hr />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.FormularioID)
+
+                            <div class="panel-group" id="accordion">
+                                <div class="panel box box-primary">
+                                    <div class="box-header with-border">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" onclick="GravDados();" id="OEuOoUTROeoNos">
+                                                <center class="text-light-blue">O EU, O OUTRO E O NÓS</center>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse1" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="form-group">
+
+                                                <div class="col-md-10">
+
+                                                    @for (int i = 0; i <= 5; i++)
+                                                    {
+                                                        @Html.EditorFor(m => Model.Experiencias[i].Checked)<text>&nbsp;</text>
+                                                        @Html.DisplayFor(m => Model.Experiencias[i].Name)<text>&nbsp;</text>
+                                                        <br />
+                                                        @Html.HiddenFor(m => Model.Experiencias[i].Name)
+                                                        @Html.HiddenFor(m => Model.Experiencias[i].Id)
+
+
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="panel box box-danger">
+                                    <div class="box-header with-border">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" id="CorpoGestos">
+                                                <center  class="text-red">CORPO, GESTOS E MOVIMENTOS</center>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="form-group">
+
+                                                <div class="col-md-10">
+                                                    @for (int i = 6; i <= 10; i++)
+                                                    {
+                                                        @Html.EditorFor(m => Model.Experiencias[i].Checked)<text>&nbsp;</text>
+                                                        @Html.DisplayFor(m => Model.Experiencias[i].Name)<text>&nbsp;</text>
+                                                        <br />
+                                                        @Html.HiddenFor(m => Model.Experiencias[i].Name)
+                                                        @Html.HiddenFor(m => Model.Experiencias[i].Id)
+
+
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel box box-warning">
+                                    <div class="box-header with-border">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" id="tracosSons">
+                                                <center  class="text-yellow">TRAÇOS, SONS, CORES E FORMAS</center>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse3" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="form-group">
+
+                                                <div class="col-md-10">
+                                                    @for (int i = 11; i <= 13; i++)
+                                                    {
+                                                        @Html.EditorFor(m => Model.Experiencias[i].Checked)<text>&nbsp;</text>
+                                                        @Html.DisplayFor(m => Model.Experiencias[i].Name)<text>&nbsp;</text>
+                                                        <br />
+                                                        @Html.HiddenFor(m => Model.Experiencias[i].Name)
+                                                        @Html.HiddenFor(m => Model.Experiencias[i].Id)
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel box box-success">
+                                    <div class="box-header with-border">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" id="EscutaFala">
+                                                <center  class="text-green"> ESCUTA, FALA, PENSAMENTO E IMAGINAÇÃO</center>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse4" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="form-group">
+
+                                                <div class="col-md-10">
+
+                                                    @for (int i = 14; i <= 22; i++)
+                                                    {
+                                                        @Html.EditorFor(m => Model.Experiencias[i].Checked)<text>&nbsp;</text>
+                                                        @Html.DisplayFor(m => Model.Experiencias[i].Name)<text>&nbsp;</text>
+                                                        <br />
+                                                        @Html.HiddenFor(m => Model.Experiencias[i].Name)
+                                                        @Html.HiddenFor(m => Model.Experiencias[i].Id)
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel box box-info">
+                                    <div class="box-header with-border">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse5" id="EspacosTempo">
+                                                <center  class="text-aqua"> ESPAÇOS, TEMPOS, QUANTIDADES</center>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse5" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="form-group">
+
+                                                <div class="col-md-10">
+                                                    @for (int i = 23; i <= 28; i++)
+                                                    {
+                                                        @Html.EditorFor(m => Model.Experiencias[i].Checked)<text>&nbsp;</text>
+                                                        @Html.DisplayFor(m => Model.Experiencias[i].Name)<text>&nbsp;</text>
+                                                        <br />
+                                                        @Html.HiddenFor(m => Model.Experiencias[i].Name)
+                                                        @Html.HiddenFor(m => Model.Experiencias[i].Id)
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="col-md-12 input-group">
+
+                                    <h2>Você tem experiência?</h2>
+
+                                    <button type="button" class="btn btn-lg botao-amarelo" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Sim</button>
+                                    <button type="button" class="btn btn-lg btn-primary" data-toggle="collapse" data-target="#collapseExample2">Não</button>
+                                    <div id="collapseExample2" class="collapse">
+
+                                        <br />
+                                        <h4>Aceita uma dica?</h4>
+                                        <button type="button" class="btn btn-lg botao-amarelo" data-toggle="collapse" data-target="#collapseExample, #collapseExample3" id="AceitaDica">Sim</button>
+                                        <button type="button" class="btn btn-lg btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Não</button>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="collapse" id="collapseExample3">
+                                <div class="card card-body">
+                                    <div id="oEu">
+                                        <h4 data-toggle="collapse" data-target="#demo1"><b>O EU, O OUTRO E O NÓS</b></h4>
+
+                                        <div id="demo1" class="collapse">
+                                            DICA: É na interação com os pares e com adultos que as crianças vão constituindo um modo próprio de agir, sentir e pensar e vão descobrindo que existem outros modos de vida, pessoas diferentes, com outros pontos de vista. Conforme vivem suas primeiras experiências sociais (na família, na instituição escolar, na coletividade), constroem percepções e questionamentos sobre si e sobre os outros, diferenciando-se e, simultaneamente, identificando-se como seres individuais e sociais. Ao mesmo tempo que participam de relações sociais e de cuidados pessoais, as crianças constroem sua autonomia e senso de autocuidado, de reciprocidade e de interdependência com o meio. Por sua vez, na Educação Infantil, é preciso criar oportunidades para que as crianças entrem em contato com outros grupos sociais e culturais, outros modos de vida, diferentes atitudes, técnicas e rituais de cuidados pessoais e do grupo, costumes, celebrações e narrativas. Nessas experiências, elas podem ampliar o modo de perceber a si mesmas e ao outro, valorizar sua identidade, respeitar os outros e reconhecer as diferenças que nos constituem como seres humanos.
+
+                                        </div>
+                                    </div>
+
+                                    <div id="Corpo">
+                                        <h4 data-toggle="collapse" data-target="#demo2"><b>CORPO, GESTOS E MOVIMENTOS</b></h4>
+
+                                        <div id="demo2" class="collapse">
+                                            DICA: Com o corpo (por meio dos sentidos, gestos, movimentos impulsivos ou intencionais, coordenados ou espontâneos), as crianças, desde cedo, exploram o mundo, o espaço e os objetos do seu entorno, estabelecem relações, expressam-se, brincam e produzem conhecimentos sobre si, sobre o outro, sobre o universo social e cultural, tornando-se, progressivamente, conscientes dessa corporeidade. Por meio das diferentes linguagens, como a música, a dança, o teatro, as brincadeiras de faz de conta, elas se comunicam e se expressam no entrelaçamento entre corpo, emoção e linguagem. As crianças conhecem e reconhecem as sensações e funções de seu corpo e, com seus gestos e movimentos, identificam suas potencialidades e seus limites, desenvolvendo, ao mesmo tempo, a consciência sobre o que é seguro e o que pode ser um risco à sua integridade física. Na Educação Infantil, o corpo das crianças ganha centralidade, pois ele é o partícipe privilegiado das práticas pedagógicas de cuidado físico, orientadas para a emancipação e a liberdade, e não para a submissão. Assim, a instituição escolar precisa promover oportunidades ricas para que as crianças possam, sempre animadas pelo espírito lúdico e na interação com seus pares, explorar e vivenciar um amplo repertório de movimentos, gestos, olhares, sons e mímicas com o corpo, para descobrir variados modos de ocupação e uso do espaço com o corpo (tais como sentar com apoio, rastejar, engatinhar, escorregar, caminhar apoiando-se em berços, mesas e cordas, saltar, escalar, equilibrar-se, correr, dar cambalhotas, alongar-se etc.).
+                                        </div>
+                                    </div>
+
+                                    <div id="Tracos">
+                                        <h4 data-toggle="collapse" data-target="#demo3"><b>TRAÇOS, SONS, CORES E FORMAS</b></h4>
+
+                                        <div id="demo3" class="collapse">
+                                            DICA: Conviver com diferentes manifestações artísticas, culturais e científicas, locais e universais, no cotidiano da instituição escolar, possibilita às crianças, por meio de experiências diversificadas, vivenciar diversas formas de expressão e linguagens, como as artes visuais (pintura, modelagem, colagem, fotografia etc.), a música, o teatro, a dança e o audiovisual, entre outras. Com base nessas experiências, elas se expressam por várias linguagens, criando suas próprias produções artísticas ou culturais, exercitando a autoria (coletiva e individual) com sons, traços, gestos, danças, mímicas, encenações, canções, desenhos, modelagens, manipulação de diversos materiais e de recursos tecnológicos. Essas experiências contribuem para que, desde muito pequenas, as crianças desenvolvam senso estético e crítico, o conhecimento de si mesmas, dos outros e da realidade que as cerca. Portanto, a Educação Infantil precisa promover a participação das crianças em tempos e espaços para a produção, manifestação e apreciação artística, de modo a favorecer o desenvolvimento da sensibilidade, da criatividade e da expressão pessoal das crianças, permitindo que se apropriem e reconfigurem, permanentemente, a cultura e potencializem suas singularidades, ao ampliar repertórios e interpretar suas experiências e vivências artísticas.
+                                        </div>
+                                    </div>
+
+                                    <div id="Escuta">
+                                        <h4 data-toggle="collapse" data-target="#demo4"><b>ESCUTA, FALA, PENSAMENTO E IMAGINAÇÃO</b></h4>
+
+                                        <div id="demo4" class="collapse">
+                                            DICA: Desde o nascimento, as crianças participam de situações comunicativas cotidianas com as pessoas com as quais interagem. As primeiras formas de interação do bebê são os movimentos do seu corpo, o olhar, a postura corporal, o sorriso, o choro e outros recursos vocais, que ganham sentido com a interpretação do outro. Progressivamente, as crianças vão ampliando e enriquecendo seu vocabulário e demais recursos de expressão e de compreensão, apropriando-se da língua materna – que se torna, pouco a pouco, seu veículo privilegiado de interação. Na Educação Infantil, é importante promover experiências nas quais as crianças possam falar e ouvir, potencializando sua participação na cultura oral, pois é na escuta de histórias, na participação em conversas, nas descrições, nas narrativas elaboradas individualmente ou em grupo e nas implicações com as múltiplas linguagens que a criança se constitui ativamente como sujeito singular e pertencente a um grupo social.
+                                            Desde cedo, a criança manifesta curiosidade com relação à cultura escrita: ao ouvir e acompanhar a leitura de textos, ao observar os muitos textos que circulam no contexto familiar, comunitário e escolar, ela vai construindo sua concepção de língua escrita, reconhecendo diferentes usos sociais da escrita, dos gêneros, suportes e portadores. Na Educação Infantil, a imersão na cultura escrita deve partir do que as crianças conhecem e das curiosidades que deixam transparecer. As experiências com a literatura infantil, propostas pelo educador, mediador entre os textos e as crianças, contribuem para o desenvolvimento do gosto pela leitura, do estímulo à imaginação e da ampliação do conhecimento de mundo. Além disso, o contato com histórias, contos, fábulas, poemas, cordéis etc. propicia a familiaridade com livros, com diferentes gêneros literários, a diferenciação entre ilustrações e escrita, a aprendizagem da direção da escrita e as formas corretas de manipulação de livros. Nesse convívio com textos escritos, as crianças vão construindo hipóteses sobre a escrita que se revelam, inicialmente, em rabiscos e garatujas e, à medida que vão conhecendo letras, em escritas espontâneas, não convencionais, mas já indicativas da compreensão da escrita como sistema de representação da língua.
+                                        </div>
+                                    </div>
+
+                                    <div id="Espacos">
+                                        <h4 data-toggle="collapse" data-target="#demo5"><b>ESPAÇOS, TEMPOS, QUANTIDADES</b></h4>
+
+                                        <div id="demo5" class="collapse">
+                                            DICA: As crianças vivem inseridas em espaços e tempos de diferentes dimensões, em um mundo constituído de fenômenos naturais e socioculturais. Desde muito pequenas, elas procuram se situar em diversos espaços (rua, bairro, cidade etc.) e tempos (dia e noite; hoje, ontem e amanhã etc.). Demonstram também curiosidade sobre o mundo físico (seu próprio corpo, os fenômenos atmosféricos, os animais, as plantas, as transformações da natureza, os diferentes tipos de materiais e as possibilidades de sua manipulação etc.) e o mundo sociocultural (as relações de parentesco e sociais entre as pessoas que conhece; como vivem e em que trabalham essas pessoas; quais suas tradições e seus costumes; a diversidade entre elas etc.). Além disso, nessas experiências e em muitas outras, as crianças também se deparam, frequentemente, com conhecimentos matemáticos (contagem, ordenação, relações entre quantidades, dimensões, medidas, comparação de pesos e de comprimentos, avaliação de distâncias, reconhecimento de formas geométricas, conhecimento e reconhecimento de numerais cardinais e ordinais etc.) que igualmente aguçam a curiosidade. Portanto, a Educação Infantil precisa promover experiências nas quais as crianças possam fazer observações, manipular objetos, investigar e explorar seu entorno, levantar hipóteses e consultar fontes de informação para buscar respostas às suas curiosidades e indagações. Assim, a instituição escolar está criando oportunidades para que as crianças ampliem seus conhecimentos do mundo físico e sociocultural e possam utilizá-los em seu cotidiano.
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group collapse box-body pad" id="collapseExample">
+                                <div class=" col-md-12 col-lg-12 card card-body input-group">
+                                            <h2>Como você imagina a experiência?</h2><hr />
+                                            @Html.TextAreaFor(model => model.Informacao, htmlAttributes: new
+                                    {
+                                        style = "width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" })
+                                            @Html.ValidationMessageFor(model => model.Informacao, "", new { @class = "textareaForm" })
+                                </div>
+                            </div>
+                            <!-- Date dd/mm/yyyy -->
+                            <div class="form-group">
+                                <h2>Data: </h2>
+                                <div class="input-group col-lg-2">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    @Html.EditorFor(model => model.Data, new { htmlAttributes = new { @class = "form-control", style = "height:50px; " } })
+                                    @Html.ValidationMessageFor(model => model.Data, "", new { @class = "text-danger" })
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <div class="input-group col-lg-2">
+                                    <input type="submit" value="Salvar" class="btn botao-amarelo btn-lg" />
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+
+
+                        </div>
+                        <div class="box-footer box-comments">
+                            @Html.ActionLink("Voltar para a Lista", "Index")
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+                <!-- /.col -->
+            </div>
+        </section>
+    }
+    <!-- /.content -->
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script>
+    $("#CorpoGestos").click(function () {
+        $(this).data('clicked', true);
+    });
+
+    $("#OEuOoUTROeoNos").click(function () {
+        $(this).data('clicked', true);
+    });
+
+
+
+    $("#tracosSons").click(function () {
+        $(this).data('clicked', true);
+    });
+
+    $("#EscutaFala").click(function () {
+        $(this).data('clicked', true);
+    });
+
+    $("#EspacosTempo").click(function () {
+        $(this).data('clicked', true);
+    });
+
+    $("#AceitaDica").click(function () {
+
+        if ($("#CorpoGestos").data('clicked')) {
+            //$("#div1").load("demo_test.txt");
+            $("#Corpo").show();
+        } else {
+            $("#Corpo").hide();
+        }
+
+        if ($("#OEuOoUTROeoNos").data('clicked')) {
+            //$("#div1").load("demo_test.txt");
+            $("#oEu").show();
+        } else {
+            $("#oEu").hide();
+        }
+
+        if ($("#tracosSons").data('clicked')) {
+            //$("#div1").load("demo_test.txt");
+            $("#Tracos").show();
+        } else {
+            $("#Tracos").hide();
+        }
+
+        if ($("#EscutaFala").data('clicked')) {
+            //$("#div1").load("demo_test.txt");
+            $("#Escuta").show();
+        } else {
+            $("#Escuta").hide();
+        }
+
+        if ($("#EspacosTempo").data('clicked')) {
+            //$("#div1").load("demo_test.txt");
+            $("#Espacos").show();
+        } else {
+            $("#Espacos").hide();
+        }
+    });
+
+    //bootstrap WYSIHTML5 - text editor
+    $('.textarea').wysihtml5()
+
+</script>
