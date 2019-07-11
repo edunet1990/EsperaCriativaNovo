@@ -17,6 +17,142 @@ namespace EsperaCriativa.Planejamentos
 
         // GET: Formularios
         [Authorize]
+        public ActionResult TestFormulario(int? Id, int? formularioID, int? ocultaFormID)
+        {
+            ViewBag.OcultForm2 = ocultaFormID;
+            var formularioList = new FormulariosExperienciasViewModel();
+            var MinhaListaDeCheckBox = new List<FormulariosExperienciasViewModel>();
+
+            var MinhaViewModelFormulario = new List<FormulariosExperienciasViewModel>();
+
+            foreach (var item in db.Formularios)
+            {
+                int c = 0;
+                c++;
+                MinhaViewModelFormulario.Add(new FormulariosExperienciasViewModel { FormularioExperienciasViewModelID = c, FormularioID = item.FormularioID, Informacao = item.Informacao, Data = item.Data, UsuarioId = item.UsuarioId });
+                ViewBag.UsuarioId = item.UsuarioId;
+            }
+            formularioList.FormulariosExperienciasVM = MinhaViewModelFormulario;
+
+            var testee = db.Experiencias;
+            int ContForms = 0;
+            List<int> guardaFormsContados = new List<int>();
+
+            int getValorMaxIDFormulario = 0;
+            foreach (var item in db.Formularios)
+            {
+                getValorMaxIDFormulario = item.FormularioID;
+            }
+
+            for (int i = 0; i <= getValorMaxIDFormulario; i++)
+            {
+
+                var Resultados = from b in db.Experiencias
+                                 select new
+                                 {
+                                     b.ExperienciaId,
+                                     b.InfoExperiencia,
+                                     Checked = ((from ab in db.FormularioExperiencias
+                                                 where (ab.FormularioId == i) & (ab.ExperienciaId == b.ExperienciaId)
+                                                 select ab).Count() > 0)
+                                 };
+
+
+
+
+                foreach (var item in Resultados)
+                {
+                    if (item.Checked)
+                    {
+                        MinhaListaDeCheckBox.Add(new FormulariosExperienciasViewModel { FormularioID = ContForms, CheckBoxID = item.ExperienciaId, Name = item.InfoExperiencia, Checked = item.Checked });
+                    }
+
+                }
+
+                if (ContForms == i)
+                {
+                    guardaFormsContados.Add(ContForms);
+                }
+                ContForms++;
+            }
+
+
+            var GetIdUser = from b in db.Usuarios where b.Nome == User.Identity.Name select b;
+
+            foreach (var item in GetIdUser)
+            {
+                ViewBag.UsuarioID = item.Id;
+
+            }
+
+
+            //ver se o insight foi informado e usar ComoFoiAexperiencia para comparar
+            List<int> listVerSeTemFormsRepetidos1 = new List<int>();
+            List<int> listVerSeTemFormsRepetidos2 = new List<int>();
+
+            foreach (var item2 in db.ComoFoiAsExperiencias)
+            {
+                var verSeFoiCad2ComoFoiNoMesmoForm = item2.PlanejamentoFixoId;
+
+
+                if (ViewBag.UsuarioID == item2.UsuarioId)
+                {
+                    listVerSeTemFormsRepetidos1.Add(item2.PlanejamentoFixoId);
+
+
+                }
+
+            }
+            listVerSeTemFormsRepetidos2 = listVerSeTemFormsRepetidos1;
+            var count = listVerSeTemFormsRepetidos2.Count;
+            var count2 = 1;
+            var count3 = 0;
+            foreach (var item in listVerSeTemFormsRepetidos1)
+            {
+
+                if (listVerSeTemFormsRepetidos2.Count == count)
+                {
+                    formularioList.FormIdComoFoiAExper.Add(item);
+                    count = 1;
+                    count3 = listVerSeTemFormsRepetidos2[0];
+
+                }
+                else if (listVerSeTemFormsRepetidos2[count2] != count3)
+                {
+                    formularioList.FormIdComoFoiAExper.Add(item);
+                    count3 = listVerSeTemFormsRepetidos2[count2];
+                    count2++;
+                }
+            }
+
+            if (true)
+            {
+
+            }
+            ViewBag.guardaFormsContados = guardaFormsContados;
+            formularioList.UsuarioId = ViewBag.UsuarioID;
+
+
+
+
+
+            formularioList.ExperienciasFormulariosVM = MinhaListaDeCheckBox;
+            ViewBag.UsuarioFormularioTeste = from b in db.Usuarios where b.Nome == User.Identity.Name select b;
+
+
+            return View(formularioList);
+        }
+
+        //POST Index
+        [HttpPost]
+        public ActionResult TestFormulario(int? ocultaFormID)
+        {
+            ViewBag.OcultForm = ocultaFormID;
+            return RedirectToAction("Index");
+        }
+
+        // GET: Formularios
+        [Authorize]
         public ActionResult Index(int? Id, int? formularioID, int? ocultaFormID)
         {
             ViewBag.OcultForm2 = ocultaFormID;
@@ -150,6 +286,7 @@ namespace EsperaCriativa.Planejamentos
             ViewBag.OcultForm = ocultaFormID;
             return RedirectToAction("Index");
         }
+
         // GET: Formularios/Details/5
         [Authorize]
         public ActionResult Details(int? id)
@@ -237,7 +374,7 @@ namespace EsperaCriativa.Planejamentos
             Formulario formulario = new Formulario();
 
 
-            if (ModelState.IsValid)
+           if (ModelState.IsValid)
             {
                 var MeuFormulario = db.Formularios.Find(formulariosViewModel.FormularioID);
 
@@ -250,7 +387,6 @@ namespace EsperaCriativa.Planejamentos
                     ViewBag.UsuarioID = item.Id;
                 }
                 formulario.Informacao = formulariosViewModel.Informacao;
-                formulario.Data = formulariosViewModel.Data;
                 formulario.Data = formulariosViewModel.Data;
 
 

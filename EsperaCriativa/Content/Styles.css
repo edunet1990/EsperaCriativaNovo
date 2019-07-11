@@ -1,4 +1,103 @@
-﻿.menu-top, .menu-logo {
+﻿
+.TextareaComoFoiAExperiencia textarea {
+    width: 568px;
+    height: 100px;
+    border-color: lightgray;
+    border-radius: 5px;
+}
+
+
+.navbar-inverse .navbar-brand {
+    color: black;
+}
+
+
+/* mouse over link */
+a:hover {
+    text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    text-decoration: none;
+}
+
+/*buttons*/
+
+.botao-azul a {
+    color: white;
+    text-decoration: none;
+}
+
+.botao-azul {
+    color: white;
+    text-decoration: none;
+}
+
+.botao-amarelo a {
+    color: black;
+}
+
+.botao-amarelo {
+    color: black;
+    background-color: #FFE683;
+}
+
+    .botao-amarelo:hover {
+        background-color: #FFD700;
+    }
+
+.cores-inversa-amarelo {
+    color: #EDB046;
+    border: 1px solid #EDB046;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 120%;
+    background-color: rgba(255,255,255, 0);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-transition: background-color 300ms ease;
+    -moz-transition: background-color 300ms ease;
+    transition: background-color 300ms ease;
+    cursor: pointer;
+}
+
+    .cores-inversa-amarelo:hover {
+        background-color: #EDB046;
+        color: white;
+    }
+
+
+
+
+.cores-inversa-azul {
+    color: dodgerblue;
+    border: 1px solid dodgerblue;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 120%;
+    background-color: rgba(255,255,255, 0);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-transition: background-color 300ms ease;
+    -moz-transition: background-color 300ms ease;
+    transition: background-color 300ms ease;
+    cursor: pointer;
+}
+
+    .cores-inversa-azul:visited {
+        color: dodgerblue
+    }
+
+    .cores-inversa-azul:hover {
+        background-color: dodgerblue;
+        color: white;
+    }
+
+
+.menu-top, .menu-logo {
     background-color: #FFE683 !important;
     color:black !important
 }
@@ -51,3 +150,36 @@ element {
     min-height: 0px;
 }
 /*Graficos*/
+
+/*modal alerta-dois-botoes*/
+.alerta-dois-botoes {
+    color: black;
+    background-color: #FFE683;
+}
+/*modal alerta-dois-botoes*/
+
+.main-sidebar {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+/*Botao insight*/
+.botao-insights-sim {
+    background-color: ghostwhite;
+    color: black;
+    text-decoration: none;
+
+}
+
+.botao-insights-nao {
+    color: white!important;
+    background-color: #222d32;
+    text-decoration:none;
+}
+/*Botao insight*/
